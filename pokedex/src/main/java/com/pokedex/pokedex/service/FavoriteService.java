@@ -1,10 +1,7 @@
 package com.pokedex.pokedex.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import org.springframework.stereotype.Service;
-
 import com.pokedex.pokedex.api.model.Favorite;
 
 @Service
