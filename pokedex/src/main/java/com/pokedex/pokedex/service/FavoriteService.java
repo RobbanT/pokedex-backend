@@ -29,10 +29,13 @@ public class FavoriteService {
         return favoriteList;
     }
 
-    public Favorite createFavorite(Favorite favorite) {
-
-        favoriteList.add(favorite);
-        return favorite;
+    public Favorite createFavorite(int id, String note) {
+        Favorite createFavorite = null;
+        if (favoriteList.stream().noneMatch(favorite -> favorite.getId() == id)) {
+            createFavorite = new Favorite(id, note);
+            favoriteList.add(createFavorite);
+        }
+        return createFavorite;
     }
 
     public Favorite editFavorite(int id, String note) {
@@ -44,5 +47,16 @@ public class FavoriteService {
             editFavorite.setNote(note);
         }
         return editFavorite;
+    }
+
+    public Favorite deleteFavorite(int id) {
+        Favorite deleteFavorite = favoriteList.stream()
+                .filter(favorite -> favorite.getId() == id)
+                .findFirst()
+                .orElse(null);
+        if (deleteFavorite != null) {
+            favoriteList.remove(deleteFavorite);
+        }
+        return deleteFavorite;
     }
 }
