@@ -1,7 +1,6 @@
 package com.pokedex.pokedex.api.controller;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.pokedex.pokedex.api.model.Favorite;
 import com.pokedex.pokedex.service.FavoriteService;
@@ -10,7 +9,6 @@ import com.pokedex.pokedex.service.FavoriteService;
 public class FavoriteController {
     private FavoriteService favoriteService;
 
-    @Autowired
     public FavoriteController(FavoriteService favoriteService) {
         this.favoriteService = favoriteService;
     }

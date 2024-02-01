@@ -1,8 +1,15 @@
 package com.pokedex.pokedex.api.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Favorite {
+    @Id
     private int id;
     private String note;
+
+    public Favorite() {
+    };
 
     public Favorite(int id, String note) {
         this.id = id;
